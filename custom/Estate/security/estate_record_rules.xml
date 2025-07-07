@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Only allow users to see and manage their own Properties -->
+<record id="estate_property_user_own_rule" model="ir.rule">
+    <field name="name">User: Own Properties Only</field>
+    <field name="model_id" search="[('model', '=', 'estate.property')]"/>
+    <field name="domain_force">[('create_uid', '=', user.id)]</field>
+    <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+</record>
+
+  <!-- Only allow users to see and manage their own Offers -->
+<!-- <record id="estate_offer_user_own_rule" model="ir.rule">
+    <field name="name">User: Own Offers Only</field>
+    <field name="model_id" search="[('model', '=', 'estate.property.offer')]"/>
+    <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+    <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+</record> -->
+
+</odoo>

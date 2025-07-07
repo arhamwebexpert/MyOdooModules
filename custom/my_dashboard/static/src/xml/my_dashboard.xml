@@ -1,0 +1,29 @@
+<templates xml:space="preserve">
+    <t t-name="my_dashboard_template">
+        <div class="o_my_dashboard" style="padding: 2rem">
+            <h2>📊 Sales Dashboard (Current Month)</h2>
+            <div class="o_stat_cards" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div t-attf-class="o_card" style="background: #e3f2fd; padding: 1rem; border-radius: 8px; min-width: 200px;">
+                    <strong>🛒 New Orders</strong>
+                    <p><t t-esc="statistics.new_orders"/></p>
+                </div>
+                <div style="background: #fce4ec; padding: 1rem; border-radius: 8px; min-width: 200px;">
+                    <strong>💰 Total Amount</strong>
+                    <p><t t-esc="statistics.total_amount"/> USD</p>
+                </div>
+                <div style="background: #e8f5e9; padding: 1rem; border-radius: 8px; min-width: 200px;">
+                    <strong>👕 Avg T-Shirts/Order</strong>
+                    <p><t t-esc="statistics.avg_tshirt_amount"/></p>
+                </div>
+                <div style="background: #fff3e0; padding: 1rem; border-radius: 8px; min-width: 200px;">
+                    <strong>❌ Cancelled Orders</strong>
+                    <p><t t-esc="statistics.cancelled_orders"/></p>
+                </div>
+                <div style="background: #ede7f6; padding: 1rem; border-radius: 8px; min-width: 200px;">
+                    <strong>⏱️ Avg Time to Sent/Cancelled</strong>
+                    <p><t t-esc="statistics.avg_time_to_sent_or_cancelled"/> days</p>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

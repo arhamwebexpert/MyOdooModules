@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Root menu -->
+    <menuitem id="menu_my_dashboard_root" name="My Dashboard"/>
+
+    <!-- Action -->
+    <record id="action_my_dashboard" model="ir.actions.client">
+        <field name="name">My Dashboard</field>
+        <field name="tag">my_dashboard</field>
+    </record>
+
+    <!-- Menu pointing to action -->
+    <menuitem id="menu_my_dashboard"
+              name="Dashboard"
+              parent="menu_my_dashboard_root"
+              action="my_dashboard.action_my_dashboard"/>
+</odoo>
